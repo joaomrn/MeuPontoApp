@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Histórico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login">
+  <button class="btn btn-light" (click)="duvida()">
+    <ion-icon name="alert"></ion-icon>
+  </button>
+
+  <div class="row" *ngIf="alerta">
+    <div class="alert alert-danger col-md-12" role="alert">
+      Para verificar os registros Escolha uma data e click sobre o botão Pesquisar!
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="input-group col-sm-6">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Data:</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect">
+          <option value="0" selected>Selecione a Data</option>
+          <option *ngFor="let historico of historicos" value="{{historico.Id}}">{{historico.DiaSemana}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-12 texto">
+        <ion-button color="success" (click)='dataHistorico()'>Pesquisar</ion-button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row table-white" *ngIf="historico">
+    <div class="col-sm-12 texto">
+      <h4>Entrada:</h4>
+      <h6>{{historico.Entrada}}</h6>
+    </div>
+    <div class="col-sm-12 texto">
+      <h4>Saída para almoço:</h4>
+      <h6>{{historico.IdaAlmoco}}</h6>
+    </div>
+    <div class="col-sm-12 texto">
+      <h4>Volta do almoço:</h4>
+      <h6>{{historico.VoltaAlmoco}}</h6>
+    </div>
+    <div class="col-sm-12 texto">
+      <h4>Saída:</h4>
+      <h6>{{historico.Saida}}</h6>
+    </div>
+
+  </div>
+
+  <div #map id="map" class="img-fluid img_perfil"></div>
+
+  <br>
+  <br>
+
+</ion-content>

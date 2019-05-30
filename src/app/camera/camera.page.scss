@@ -1,0 +1,21 @@
+
+//Circula a imagem na tela
+.circulo {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.img_perfil {
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+//Ceta tamanho do mapa
+#map {
+    height: 100%;
+    width: 100%;
+  }

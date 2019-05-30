@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Minha Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card" style="border: transparent">
+        <img class="card-img-top circulo" [src]="photo" (click)="takePicture()">
+
+      </div>
+    </div>
+  </div>
+
+  <div id="map" class="img-fluid img_perfil"></div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block" (click)="confirmar()">Confirmar</ion-button>
+  <ion-button expand="block" (click)="cleanPhoto()">Cancelar</ion-button>
+</ion-footer>

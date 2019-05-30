@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Abrir Solicitação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login">
+  <div class="container">
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ion-item>
+          <ion-label>Selecione a data: </ion-label>
+          <ion-datetime value="2019-05-01" min="1990-02" max="2050-12" [dayShortNames]="customDayShortNames"
+            displayFormat="DD/MM/YYYY" monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des">
+          </ion-datetime>
+        </ion-item>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ion-item>
+          <ion-label>Horário</ion-label>
+          <ion-datetime value="00:00" displayFormat="HH:mm"></ion-datetime>
+        </ion-item>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ion-label>Solicitação:</ion-label>
+      <br>
+      <br>
+        <textarea rows="5" cols="35" placeholder="Informe a justificativa."></textarea>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+    <ion-button expand="block" (click)="Enviar()">Confirmar</ion-button>
+  </ion-footer>
