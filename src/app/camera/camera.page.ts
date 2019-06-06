@@ -3,7 +3,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LoadingController, NavController, AlertController } from '@ionic/angular';
 import { ServicoService } from '../servico.service';
-import { Ponto } from '../shared/ponto.model'
 
 declare var google;
 
@@ -17,7 +16,6 @@ export class CameraPage {
 
   map: any;
   photo: string = '../assets/icon/usuario2.png';
-  public ponto: Ponto
 
   public latitude: number
   public longitude: number
@@ -68,12 +66,6 @@ export class CameraPage {
     //Salva no banco a localidade do usuario
     this.SalvarPosicao(this.latitude, this.longitude)
 
-    // setTimeout(() => {
-    //   this.presentAlert()
-    //   this.photo = '../assets/icon/usuario2.png'
-    //   this.navCtrl.navigateForward(['/principal/'])
-    // }, 7000)
-
   }
 
   async presentAlert() {
@@ -112,9 +104,17 @@ export class CameraPage {
       });
   }
 
+  //Salva no banco o registro de ponto enviando a latitude e a longitude
   SalvarPosicao(latitude: number, longitude: number): void {
-    this.servicoService.SalvarHistorico(latitude, longitude)
-    
+    this.servicoService.getSalvarPonto(latitude, longitude).
+      then((registroSalvo: boolean) => {
+        //Se o registro foi salvo continua a execução e direciona o usuario para a tela principal.
+        if (registroSalvo) {
+          this.presentAlert()
+          this.photo = '../assets/icon/usuario2.png'
+          this.navCtrl.navigateForward(['/principal/'])
+        }
+      })
   }
 
 }

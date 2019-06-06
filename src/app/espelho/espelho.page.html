@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Espelho do Ponto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="table-responsive-lg">
+        <table class="table" *ngIf="historicos">
+          <thead>
+            <tr class="col-sm-12 texto">
+              <th scope="col" class="col-sm-2">Data:</th>
+              <th scope="col" class="col-sm-2">Entrada:</th>
+              <th scope="col" class="col-sm-2">Saída para almoço:</th>
+              <th scope="col" class="col-sm-2">Volta do almoço:</th>
+              <th scope="col" class="col-sm-2">Saída:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="col-sm-12" *ngFor="let historico of historicos">
+              <th scope="row">{{historico.DiaSemana}}</th>
+              <th scope="row">{{historico.Entrada}}</th>
+              <th scope="row">{{historico.IdaAlmoco}}</th>
+              <th scope="row">{{historico.VoltaAlmoco}}</th>
+              <th scope="row">{{historico.Saida}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 texto">
+        <ion-button color="success" (click)='exportarPDF()'>Exportar PDF</ion-button>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

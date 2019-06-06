@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Usuario } from '../model/usuario';
+import { Usuario } from '../shared/usuario.model';
 import { ActivatedRoute } from '@angular/router';
 import { ServicoService } from '../servico.service';
 
@@ -50,6 +50,10 @@ export class PrincipalPage implements OnInit {
 
   abrirSolicitacao() {
     this.navCtrl.navigateForward(['/solicitacao/'])
+  }
+
+  consultarEspelho() {
+    this.navCtrl.navigateForward(['/espelho/'])
   }
 
 }

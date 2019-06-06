@@ -5,7 +5,12 @@
 </ion-header>
 
 <ion-content class="login">
-  <button class="btn btn-light" (click)="duvida()">
+
+  <button class="btn btn-primary" [routerLink]="['/principal']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+
+  <button class="btn btn-danger" (click)="duvida()">
     <ion-icon name="alert"></ion-icon>
   </button>
 
@@ -37,7 +42,7 @@
 
   <div class="row">
     <div class="col-sm-12 texto">
-        <ion-button color="success" (click)='dataHistorico()'>Pesquisar</ion-button>
+      <ion-button color="success" (click)='dataHistorico()'>Pesquisar</ion-button>
     </div>
   </div>
 
@@ -45,22 +50,21 @@
 
   <div class="row table-white" *ngIf="historico">
     <div class="col-sm-12 texto">
-      <h4>Entrada:</h4>
-      <h6>{{historico.Entrada}}</h6>
+      <h4>Entrada: <strong>{{historico.Entrada}}</strong></h4>
+      <button class="btn btn-info" (click)="ExibirLocalizacao('Entrada')">Localização</button>
     </div>
     <div class="col-sm-12 texto">
-      <h4>Saída para almoço:</h4>
-      <h6>{{historico.IdaAlmoco}}</h6>
+      <h4>Saída para almoço: <strong>{{historico.IdaAlmoco}}</strong></h4>
+      <button class="btn btn-info" (click)="ExibirLocalizacao('IdaAlmoco')">Localização</button>
     </div>
     <div class="col-sm-12 texto">
-      <h4>Volta do almoço:</h4>
-      <h6>{{historico.VoltaAlmoco}}</h6>
+      <h4>Volta do almoço: <strong>{{historico.VoltaAlmoco}}</strong></h4>
+      <button class="btn btn-info" (click)="ExibirLocalizacao('VoltaAlmoco')">Localização</button>
     </div>
     <div class="col-sm-12 texto">
-      <h4>Saída:</h4>
-      <h6>{{historico.Saida}}</h6>
+      <h4>Saída: <strong>{{historico.Saida}}</strong></h4>
+      <button class="btn btn-info" (click)="ExibirLocalizacao('Saida')">Localização</button>
     </div>
-
   </div>
 
   <div #map id="map" class="img-fluid img_perfil"></div>

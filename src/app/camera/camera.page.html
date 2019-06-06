@@ -8,14 +8,21 @@
 
 <ion-content padding>
 
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="border: transparent">
-        <img class="card-img-top circulo" [src]="photo" (click)="takePicture()">
+  <button class="btn btn-primary" [routerLink]="['/principal']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="box">
+          <img class="card-img-top circulo" [src]="photo" (click)="takePicture()">
+        </div>
       </div>
     </div>
   </div>
+
+  <br>
 
   <div id="map" class="img-fluid img_perfil"></div>
 

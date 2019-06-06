@@ -6,6 +6,4 @@ export class Ponto{
 	public VoltaAlmoco?: string
 	public Saida: string
 	public DiaSemana?: string
-	public Latitude?: number
-	public Longitude?: number
 }

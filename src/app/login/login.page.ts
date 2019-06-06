@@ -14,11 +14,7 @@ export class LoginPage{
   
 public dia: Date
 
-   constructor(private navCtrl: NavController) { 
-    //  this.dia = new Date
-    // console.log(this.dia.getDate())
-    // console.log(this.dia.toJSON())
-   }
+   constructor(private navCtrl: NavController) {}
 
   Logar() {
     this.navCtrl.navigateForward(['/principal/'])
