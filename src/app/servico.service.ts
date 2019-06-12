@@ -33,6 +33,14 @@ export class ServicoService {
             .then((resposta: any) => resposta.json())
     }
 
+    //Retorna uma promise com todos os registros no banco
+    public getLocalizacao(): Promise<Localizacao[]> {
+
+        return this.http.get(`${this.API_URL}/ListaLocalizacao/1`)
+            .toPromise()
+            .then((resposta: any) => resposta.json())
+    }
+
     public getSalvarPonto(latitude: number, longitude: number): Promise<boolean> {
         console.log('SalvarHistorico na classe servico.service: ' + latitude)
 

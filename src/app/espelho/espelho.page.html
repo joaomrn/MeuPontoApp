@@ -5,38 +5,64 @@
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <div class="row">
-      <div class="table-responsive-lg">
-        <table class="table" *ngIf="historicos">
-          <thead>
-            <tr class="col-sm-12 texto">
-              <th scope="col" class="col-sm-2">Data:</th>
-              <th scope="col" class="col-sm-2">Entrada:</th>
-              <th scope="col" class="col-sm-2">Saída para almoço:</th>
-              <th scope="col" class="col-sm-2">Volta do almoço:</th>
-              <th scope="col" class="col-sm-2">Saída:</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="col-sm-12" *ngFor="let historico of historicos">
-              <th scope="row">{{historico.DiaSemana}}</th>
-              <th scope="row">{{historico.Entrada}}</th>
-              <th scope="row">{{historico.IdaAlmoco}}</th>
-              <th scope="row">{{historico.VoltaAlmoco}}</th>
-              <th scope="row">{{historico.Saida}}</th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <button class="btn btn-primary" [routerLink]="['/principal']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
 
-    <div class="row">
-      <div class="col-sm-12 texto">
-        <ion-button color="success" (click)='exportarPDF()'>Exportar PDF</ion-button>
-      </div>
-    </div>
+  <ion-button class="pdf texto" color="success" (click)='exportarPDF()'>Exportar PDF</ion-button>
 
+  <div class="container-fluid">
+    <br>
+    <br>
+    <div class="row flex-xl-nowrap">
+      <h3 class="titulo">Espelho de ponto</h3>
+      <br>
+      <table class="table table-striped" *ngIf="historicos">
+        <thead>
+          <tr class="col-sm">
+            <th scope="col">Data</th>
+            <th scope="col">Entrada</th>
+            <th scope="col">Almoço</th>
+            <th scope="col">Volta</th>
+            <th scope="col">Saída</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="col-sm" *ngFor="let historico of historicos">
+            <th scope="row">{{historico.DiaSemana}}</th>
+            <td>{{historico.Entrada}}</td>
+            <td>{{historico.IdaAlmoco}}</td>
+            <td>{{historico.VoltaAlmoco}}</td>
+            <td>{{historico.Saida}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+    <br>
+    <div class="row flex-xl-nowrap">
+      <h3 class="titulo">Localização</h3>
+      <br>
+      <table class="table table-striped" *ngIf="localizacaoList">
+        <thead>
+          <tr class="col-sm">
+            <th scope="col">Data</th>
+            <th scope="col">Registro</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="col-sm" *ngFor="let localizacao of localizacaoList">
+            <th sscope="row">{{localizacao.DataRegistroPonto}}</th>
+            <td>{{localizacao.RegistroPonto}}</td>
+            <td>{{localizacao.Latitude}}</td>
+            <td>{{localizacao.Longitude}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
   </div>
 
 </ion-content>

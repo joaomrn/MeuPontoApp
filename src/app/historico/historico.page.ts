@@ -64,7 +64,7 @@ export class HistoricoPage implements OnInit {
   }
 
   public ExibirLocalizacao(registroPonto: string): any {
-    console.log(this.localizacao)
+    //console.log(this.localizacao)
     this.localizacao.forEach(localizacao => {
       if (localizacao.RegistroPonto == registroPonto) {
         this.initializeMap(localizacao.Latitude, localizacao.Longitude)
